@@ -8,30 +8,20 @@ namespace QuieroPizza.BL
 {
     public class ProductosBL
     {
-         public List<Producto> ObtenerProductos()
+        Contexto _Contexto;
+        public List<Producto> ListadeProductos { get; set; }
+
+        public ProductosBL()
         {
-            var producto1 = new Producto();
-            producto1.Id = 1;
-            producto1.Descripcion = "Pizza 6 quesos";
-            producto1.Precio = 200;
-
-            var producto2 = new Producto();
-            producto2.Id = 2;
-            producto2.Descripcion = "Pizza 4 Estaciones ";
-            producto2.Precio = 250;
-
-            var producto3 = new Producto();
-            producto3.Id = 3;
-            producto3.Descripcion = "Pizza Jamon y Queso";
-            producto3.Precio = 180;
-
-            var listadeproductos = new List<Producto>();
-            listadeproductos.Add(producto1);
-            listadeproductos.Add(producto2);
-            listadeproductos.Add(producto3);
-
-            return listadeproductos;
+            ListadeProductos = new List<Producto>();
+           _Contexto = new Contexto();
 
         }
+        public List<Producto> ObtenerProductos()
+        {
+            ListadeProductos = _Contexto.Productos.ToList();
+
+            return ListadeProductos;
     }
+   }
 }

@@ -11,15 +11,15 @@ namespace QuieroPizza.Web.Controllers
 {
     public class ProductosController : Controller
     {
-        // GET: Productos
+      //Get: Productos
         public ActionResult Index()
         {
             var productoBL = new ProductosBL();
 
-            var listadeProductos = productoBL.ObtenerProductos();
+           var listadeProductos = productoBL.ObtenerProductos();
 
-            return View(listadeProductos);
+           return View(listadeProductos);
 
-        }
+       }
     }
 }
