@@ -17,6 +17,6 @@ namespace QuieroPizza.BL
         public double Precio { get; set; }
         public Categoria Categoria { get; set; }
         public bool Activo { get; set; }
-
+        public object CategoriaId { get; set; }
     }
 }

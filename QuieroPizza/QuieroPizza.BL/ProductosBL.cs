@@ -13,13 +13,16 @@ namespace QuieroPizza.BL
 
         public ProductosBL()
         {
-            ListadeProductos = new List<Producto>();
-           _Contexto = new Contexto();
+            _Contexto = new Contexto();
 
+            ListadeProductos = new List<Producto>();
+        
         }
         public List<Producto> ObtenerProductos()
         {
-            ListadeProductos = _Contexto.Productos.ToList();
+            ListadeProductos = _Contexto.Productos
+            .Include("Categoria")
+            .ToList();
 
             return ListadeProductos;
     }
@@ -41,7 +44,9 @@ namespace QuieroPizza.BL
         }
         public Producto ObtenerProducto(int Id)
         {
-            var producto = _Contexto.Productos.Find(Id);
+            var producto = _Contexto.Productos
+                .Include("Categoria").FirstOrDefault(p => p.Id ==Id );
+
             return producto;
         }
 
