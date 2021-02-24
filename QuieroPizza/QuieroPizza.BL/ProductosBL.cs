@@ -51,5 +51,6 @@ namespace QuieroPizza.BL
             _Contexto.Productos.Remove(producto);
             _Contexto.SaveChanges();
         }
+        
     }
 }
