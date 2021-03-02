@@ -56,7 +56,7 @@
             // 
             // listadeProductosBindingSource
             // 
-            this.listadeProductosBindingSource.DataSource = typeof(QuieroPizza.BL.Producto);
+            this.listadeProductosBindingSource.DataSource = typeof(QuieroPizza.BL.producto);
             // 
             // listadeProductosBindingNavigator
             // 

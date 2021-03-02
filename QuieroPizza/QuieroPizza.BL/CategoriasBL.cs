@@ -10,6 +10,7 @@ namespace QuieroPizza.BL
     {
         Contexto _contexto;
         public List<Categoria> ListadeCategorias { get; set; }
+        public object ListadeCategoria { get; private set; }
 
         public CategoriasBL()
         {
@@ -27,9 +28,9 @@ namespace QuieroPizza.BL
             {
                 _contexto.Categorias.Add(categoria);
 
-            }else
+            } else
             {
-             var categoriaExistente = _contexto.Categorias.Find(categoria.id);
+                var categoriaExistente = _contexto.Categorias.Find(categoria.id);
                 categoriaExistente.Descripcion = categoria.Descripcion;
             }
             _contexto.SaveChanges();
@@ -43,13 +44,11 @@ namespace QuieroPizza.BL
         public void EliminarCategoria(int Id)
         {
             var categoria = _contexto.Categorias.Find(Id);
+
             _contexto.Categorias.Remove(categoria);
             _contexto.SaveChanges();
         }
 
-        public void GuardarCategoria(Producto producto)
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }
