@@ -22,9 +22,13 @@ namespace QuieroPizza.BL
         }
 
 
-        public  DbSet<Producto> Productos { get; set; }
+        public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        public object Categoria { get; internal set; }
+        public DbSet<Cliente> Clientes { get; set; }
+
+        public DbSet<Orden> Ordenes { get; set; }
+        public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
+       
     }
 } 
 
