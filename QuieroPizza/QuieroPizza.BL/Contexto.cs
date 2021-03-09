@@ -19,6 +19,7 @@ namespace QuieroPizza.BL
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
              modelBuilder.Conventions.Remove<PluralizingTableNameConvention> ();
+            Database.SetInitializer(new DatosdeInicio()); //Agregar datos de inicio al momento de crear la base de datos  
         }
 
 
@@ -28,7 +29,7 @@ namespace QuieroPizza.BL
 
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
-        public object Usuarios { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
     }
 } 
 

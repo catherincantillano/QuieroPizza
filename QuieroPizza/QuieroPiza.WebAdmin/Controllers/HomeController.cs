@@ -6,6 +6,7 @@ using System.Web.Mvc;
 
 namespace QuieroPiza.WebAdmin.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         // GET: Home

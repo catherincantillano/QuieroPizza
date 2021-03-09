@@ -7,9 +7,11 @@ using System.Web.Mvc;
 
 namespace QuieroPiza.WebAdmin.Controllers
 {
+    [Authorize]
     public class OrdenDetalleController : Controller
     {
-        OrdenesBL _ordenBL;
+        
+            OrdenesBL _ordenBL;
         ProductosBL _productosBL;
         public OrdenDetalleController()
         {
