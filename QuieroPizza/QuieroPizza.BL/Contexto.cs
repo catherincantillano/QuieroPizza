@@ -28,7 +28,7 @@ namespace QuieroPizza.BL
 
         public DbSet<Orden> Ordenes { get; set; }
         public DbSet<OrdenDetalle> OrdenDetalle { get; set; }
-       
+        public object Usuarios { get; set; }
     }
 } 
 

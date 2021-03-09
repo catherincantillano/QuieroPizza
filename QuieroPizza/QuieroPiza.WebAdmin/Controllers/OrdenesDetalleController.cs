@@ -30,7 +30,7 @@ namespace QuieroPiza.WebAdmin.Controllers
             var nuevaOrdenDetalle = new OrdenDetalle();
             nuevaOrdenDetalle.Ordenid = id;
 
-            var productos = _productosBL.ObtenerProductos();
+            var productos = _productosBL.ObtenerProductosActivos();
             ViewBag.ProductoId = new SelectList(productos, "Id", "Descripcion");
 
             return View(nuevaOrdenDetalle);
@@ -53,7 +53,7 @@ namespace QuieroPiza.WebAdmin.Controllers
             }
                
 
-            var productos = _productosBL.ObtenerProductos();
+            var productos = _productosBL.ObtenerProductosActivos();
             ViewBag.ProductoId = new SelectList(productos, "Id", "Descripcion");
             return View(ordenDetalle);
         }
